@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-paper text-ink font-body antialiased; }
+  h1, h2, h3, h4 { @apply font-display; }
+  :focus-visible { outline: 2px solid #7A2530; outline-offset: 3px; }
+}
+
+@layer utilities {
+  .ticket-notch::before,
+  .ticket-notch::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: #F3EFE4;
+    border-radius: 9999px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .ticket-notch::before { left: -12px; }
+  .ticket-notch::after { right: -12px; }
+}
